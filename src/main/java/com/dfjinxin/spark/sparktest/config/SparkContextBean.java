@@ -18,12 +18,12 @@ public class SparkContextBean {
 
     private String master = "local";
 
-    @Bean
-    @ConditionalOnMissingBean(SparkConf.class)
-    public SparkConf sparkConf() {
-        SparkConf conf = new SparkConf().setAppName(appName).setMaster(master);
-        return conf;
-    }
+//    @Bean
+//    @ConditionalOnMissingBean(SparkConf.class)
+//    public SparkConf sparkConf() {
+//        SparkConf conf = new SparkConf().setAppName(appName).setMaster(master);
+//        return conf;
+//    }
 
 //    @Bean
 //    @ConditionalOnMissingBean(JavaSparkContext.class)
@@ -31,11 +31,11 @@ public class SparkContextBean {
 //        return new JavaSparkContext(sparkConf());
 //    }
 
-    @Bean
-    @ConditionalOnMissingBean(SparkSession.class)
-    public SparkSession sparkSession(){
-        return SparkSession.builder().config(sparkConf()).getOrCreate();
-    }
+//    @Bean
+//    @ConditionalOnMissingBean(SparkSession.class)
+//    public SparkSession sparkSession(){
+//        return SparkSession.builder().config(sparkConf()).getOrCreate();
+//    }
 
     public String getSparkHome() {
         return sparkHome;
